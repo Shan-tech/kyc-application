@@ -1,0 +1,30 @@
+#content{
+    margin-top:5% ;
+}
+#tile {
+    background-color: white;
+    width: 50%; 
+    height: 10em;
+    margin: 1em;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .tile-img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: none;
+    width: 10em;
+    height: inherit;
+    float: left;
+  }
+  
+  .tile-info {
+    height: inherit;
+    padding: 1em;
+    margin-left: 15em; 
+  }
+  #req, #slash, #acc{
+    visibility: hidden;
+  }

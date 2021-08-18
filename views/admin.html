@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+  <head>
+    <!-- styles -->
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"  />
+    <!-- toast js -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>KYC</title>
+  </head>
+
+
+  <body>
+    <section id="content" class="ui container" >
+      <h1 class="ui center aligned header">KYC Application</h1>
+
+        <div class="ui breadcrumb">
+            <a class="section" href="/home">New User</a>
+            <div class="divider">/</div>
+            <a class="active section" >Admin</a>
+            <div class="divider">-</div>
+            <a id="req" class="section" href="/pendingRequests">Pending Requests</a>
+            <div id="slash" class="divider">/</div>
+            <a id="acc" class="section" href="/acceptedUsers">Accepted Users</a>
+        </div>
+        <hr />
+      <section id="tile" class="login">
+          <div  class="ui input focus" style="padding: 8%;">
+            <input type="text" id="admin_id" placeholder="admin id" /> &emsp;
+            <input type="password" id="password" placeholder="password" /> &emsp;
+            <button onclick="validate()" class="ui inverted orange button">Login</button>
+        </div>
+      </section>
+        <!-- List appears here -->
+     </section>   <!--container -->
+  </body>
+  <script src="/controllers/func.js" ></script>
+
+   <script>
+     function validate()
+     {
+        var req=document.querySelector('#req'); 
+        var slash=document.querySelector('#slash'); 
+        var acc=document.querySelector('#acc'); 
+        var login=document.querySelector(".login");
+        var admin_id=document.getElementById('admin_id').value;
+        var password=document.getElementById('password').value;
+         if(admin_id==="admin@kyc" && password==="kyc123"){
+         // if(admin_id==="1" && password==="1"){
+          req.style.visibility= "visible";
+          slash.style.visibility= "visible";
+          acc.style.visibility= "visible";
+          login.style.display="none";
+            //tile creation
+            var div=document.createElement('div');
+            div.className+="ui center aligned";
+            div.setAttribute('id','tile');
+            // set image 
+            var img=document.createElement('img');
+            img.className +="tile-img";
+            img.setAttribute('src','https://image.freepik.com/free-vector/cute-astronaut-working-laptop-cartoon-vector-icon-illustration_138676-3472.jpg');
+            // append image to section container
+            div.appendChild(img);
+            content.appendChild(div);
+            // set name and buttons (lets say info)
+            var info=document.createElement('div');
+            info.className+="tile-info";
+            info.innerHTML=`<h1>Hii Admin</h1><p>You can now access requests methods</p>`;
+            div.appendChild(info);
+          }
+          else{
+            swal(
+              "Error",
+              "Incorrect Credientials! ",
+              "error"
+          )
+          }
+     }
+
+   </script>
+</html>

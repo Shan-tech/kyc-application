@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+  <head>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"  />
+    <!-- toast js -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>KYC</title>
+  </head>
+
+  <body>
+    <section class="ui container" id="content">
+      <h1 class="ui center aligned header">KYC Application</h1>
+
+        <div class="ui breadcrumb">
+          <a class="active section" >New User</a>
+          <div class="divider">/</div>
+          <a class="section" href="/admin">Admin</a>
+        </div>
+        <hr />
+      <section class="ui container">
+        &emsp;&emsp;
+          <div class="ui input focus" style="margin-left: 8%;">
+          <input type="text" id="name" placeholder="name" /> &emsp;
+          <input type="text" id="img_url" placeholder="image_url" /> &emsp;
+          <button onclick="add()" class="ui inverted green button">ADD</button>
+        </div>   
+        </section> <!--  form -->
+     </section>   <!--container -->
+  </body>
+
+  <script src="/controllers/func.js" ></script>
+   
+</html>
